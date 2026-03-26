@@ -1,264 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danube Title Agency | Premium Title Services</title>
-    <meta name="description" content="Commercial and Residential Title Agency. Order Title, Load Modification, and Construction Draws directly online.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="index.css">
+    <title>Danube Title | Title Insurance & Settlement Services</title>
+    <!-- Tailwind CSS via CDN since Node is not installed -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
 </head>
-<body>
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-text">Danube</span>
-                <span class="logo-subtext">Title Agency</span>
-            </div>
-            <nav class="nav-links">
-                <button class="nav-btn active" data-target="about-us">About Us</button>
-                <div class="dropdown">
-                    <button class="nav-btn dropdown-toggle">Services <span class="arrow">▼</span></button>
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item nav-btn" data-target="commercial">Commercial</button>
-                        <button class="dropdown-item nav-btn" data-target="residential">Residential</button>
-                        <button class="dropdown-item nav-btn" data-target="loan-modification">Loan Modification</button>
-                        <button class="dropdown-item nav-btn" data-target="construction-draws">Construction Draws</button>
-                    </div>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+            <div class="flex items-center gap-4">
+                <!-- Custom SVG Logo matching attached image (Shield inside a Ring) -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="#253A5A" stroke-width="10" />
+                    <!-- Right half of shield (light blue) -->
+                    <path d="M30 35 L50 25 L70 35 V55 C70 73 50 85 50 85 C50 85 30 73 30 55 Z" fill="#5A7D9A" />
+                    <!-- Left half of shield (dark navy) -->
+                    <path d="M50 25 L30 35 V55 C30 73 50 85 50 85 V25 Z" fill="#253A5A" />
+                </svg>
+                
+                <div>
+                    <div class="font-serif text-2xl tracking-wide text-[#253A5A]">Danube Title</div>
+                    <div class="hidden text-xs uppercase tracking-[0.28em] text-slate-500 sm:block">Title Insurance & Settlement Services</div>
                 </div>
-                <button class="nav-btn" data-target="order-title">Order Title</button>
-                <button class="nav-btn login-btn" data-target="sign-in">Sign In</button>
-            </nav>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
+
+            <nav class="hidden items-center gap-8 text-sm md:flex">
+                <a href="#services" class="transition hover:text-[#253A5A]">Services</a>
+                <a href="#why-us" class="transition hover:text-[#253A5A]">Why Danube</a>
+                <a href="#process" class="transition hover:text-[#253A5A]">Process</a>
+                <a href="#contact" class="transition hover:text-[#253A5A]">Contact</a>
+                <a href="#contact" class="rounded-full bg-[#253A5A] px-5 py-2.5 text-white shadow-sm transition hover:opacity-90">
+                    Order Title
+                </a>
+            </nav>
         </div>
     </header>
 
-    <main class="content-container">
-        <!-- Tab Contents will be structured here -->
-        <section id="about-us" class="tab-content active">
-            <div class="hero">
-                <div class="hero-content container">
-                    <h1 class="fade-in-up">Precision and Trust in Every Transaction</h1>
-                    <p class="fade-in-up delay-1">Danube Title Agency provides premier commercial and residential title services with unparalleled accuracy and dedication.</p>
-                </div>
-            </div>
-            <div class="container section-padding pb-0 fade-in-up delay-2">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h2 class="section-title">Who We Are</h2>
-                        <p>At Danube Title Agency, we understand that a real estate transaction is one of the most significant financial milestones in our clients' lives. Our team of seasoned professionals ensures a seamless, transparent, and secure closing process.</p>
-                        <p>We pride ourselves on our meticulous attention to detail, proactive communication, and an unwavering commitment to protecting your property rights.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(31,58,95,0.10),rgba(175,196,214,0.10))] -z-10"></div>
+            <div class="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+                <div class="relative">
+                    <div class="mb-5 inline-flex rounded-full border border-[#AFC4D6] bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[#253A5A]">
+                        Residential & Commercial Title Insurance
                     </div>
-                    <div class="about-stats">
-                        <div class="stat-card">
-                            <h3>20+</h3>
-                            <p>Years Experience</p>
+                    <h1 class="max-w-xl font-serif text-5xl leading-tight text-[#253A5A] md:text-6xl">
+                        Protecting Ownership. Securing Every Transaction.
+                    </h1>
+                    <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+                        Danube Title delivers trusted title insurance and settlement support with a premium, responsive experience for buyers, sellers, lenders, investors, and real estate professionals.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#contact" class="rounded-full bg-[#253A5A] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-slate-200 transition hover:opacity-90">
+                            Order Title
+                        </a>
+                        <a href="#services" class="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 transition hover:border-[#253A5A] hover:text-[#253A5A]">
+                            Explore Services
+                        </a>
+                    </div>
+                    <div class="mt-10 grid max-w-lg grid-cols-1 gap-4 sm:grid-cols-3">
+                        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <div class="text-2xl font-semibold text-[#253A5A]">Fast</div>
+                            <div class="mt-1 text-sm text-slate-500">Responsive communication and efficient closings</div>
                         </div>
-                        <div class="stat-card">
-                            <h3>10k+</h3>
-                            <p>Successful Closings</p>
+                        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <div class="text-2xl font-semibold text-[#253A5A]">Secure</div>
+                            <div class="mt-1 text-sm text-slate-500">Careful transaction handling from start to finish</div>
                         </div>
-                        <div class="stat-card">
-                            <h3>$5B+</h3>
-                            <p>Transactions Insured</p>
+                        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <div class="text-2xl font-semibold text-[#253A5A]">Trusted</div>
+                            <div class="mt-1 text-sm text-slate-500">A polished experience built for confidence</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-[2rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-200">
+                        <div class="overflow-hidden rounded-[1.5rem] bg-[#253A5A]">
+                            <div class="flex min-h-[480px] flex-col justify-between bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-8 text-white">
+                                <div>
+                                    <div class="mb-8 flex items-center gap-4">
+                                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white">
+                                            <circle cx="50" cy="50" r="42" fill="none" stroke="white" stroke-linecap="round" stroke-width="8" opacity="0.9" />
+                                            <path d="M30 35 L50 25 L70 35 V55 C70 73 50 85 50 85 C50 85 30 73 30 55 Z" fill="#AFC4D6" />
+                                            <path d="M50 25 L30 35 V55 C30 73 50 85 50 85 V25 Z" fill="#E2E8F0" />
+                                        </svg>
+                                        <div>
+                                            <div class="font-serif text-3xl">Danube Title</div>
+                                            <div class="text-xs uppercase tracking-[0.28em] text-slate-200">Title Insurance & Settlement</div>
+                                        </div>
+                                    </div>
+                                    <div class="max-w-sm font-serif text-4xl leading-tight">
+                                        Trusted title services for modern real estate transactions.
+                                    </div>
+                                </div>
+
+                                <div class="grid gap-4 text-sm text-slate-100 sm:grid-cols-2 mt-8">
+                                    <div class="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur">
+                                        <div class="font-medium">For Buyers & Sellers</div>
+                                        <div class="mt-2 text-slate-200">Clear communication, coordinated closings, and confidence throughout the process.</div>
+                                    </div>
+                                    <div class="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur">
+                                        <div class="font-medium">For Lenders & Agents</div>
+                                        <div class="mt-2 text-slate-200">Professional support designed to keep transactions moving smoothly.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="commercial" class="tab-content">
-            <div class="page-header">
-                <div class="container">
-                    <h1>Commercial Title Services</h1>
-                    <p>Comprehensive solutions for complex commercial transactions.</p>
-                </div>
+        <!-- Services Section -->
+        <section id="services" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="text-sm font-semibold uppercase tracking-[0.25em] text-[#3E5F8A]">Services</div>
+                <h2 class="mt-4 font-serif text-4xl text-[#253A5A]">Title and settlement services built for smooth closings.</h2>
+                <p class="mt-4 text-lg text-slate-600">
+                    Designed for residential and commercial transactions with an elevated, detail-oriented client experience.
+                </p>
             </div>
-            <div class="container section-padding">
-                <div class="service-details">
-                    <p class="lead-text">Navigating commercial real estate transactions requires specialized knowledge and precision. Danube Title Agency provides expert title and escrow services tailored for developers, investors, and corporate entities.</p>
-                    <ul class="feature-list">
-                        <li>Multi-site and multi-state portfolio transactions</li>
-                        <li>Complex zoning and land use endorsements</li>
-                        <li>Mezzanine financing and entity transfers</li>
-                        <li>Expert clearing of intricate title defects</li>
-                    </ul>
+
+            <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <!-- Service 1 -->
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="mb-4 h-11 w-11 rounded-2xl bg-[#F5F7FA]"></div>
+                    <h3 class="font-serif text-2xl text-[#253A5A]">Residential Title Insurance</h3>
+                    <p class="mt-3 leading-7 text-slate-600">Protection and support for home purchases, refinances, and residential transfers.</p>
                 </div>
-            </div>
-        </section>
-        <section id="residential" class="tab-content">
-            <div class="page-header">
-                <div class="container">
-                    <h1>Residential Title Services</h1>
-                    <p>Securing your dream home with absolute certainty.</p>
+                <!-- Service 2 -->
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="mb-4 h-11 w-11 rounded-2xl bg-[#F5F7FA]"></div>
+                    <h3 class="font-serif text-2xl text-[#253A5A]">Commercial Title Insurance</h3>
+                    <p class="mt-3 leading-7 text-slate-600">Title solutions for investors, developers, lenders, and complex commercial deals.</p>
                 </div>
-            </div>
-            <div class="container section-padding">
-                <div class="service-details">
-                    <p class="lead-text">Whether you are buying your first home or refinancing your current one, our team ensures a smooth, timely, and secure closing process.</p>
-                    <ul class="feature-list">
-                        <li>Thorough title searches and examinations</li>
-                        <li>Title insurance policies (Owner's and Lender's)</li>
-                        <li>Escrow and settlement services</li>
-                        <li>Clear communication out to all parties</li>
-                    </ul>
+                <!-- Service 3 -->
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="mb-4 h-11 w-11 rounded-2xl bg-[#F5F7FA]"></div>
+                    <h3 class="font-serif text-2xl text-[#253A5A]">Settlement Services</h3>
+                    <p class="mt-3 leading-7 text-slate-600">Professional transaction coordination, document flow, and closing support.</p>
                 </div>
-            </div>
-        </section>
-        <section id="loan-modification" class="tab-content">
-            <div class="page-header">
-                <div class="container">
-                    <h1>Loan Modification</h1>
-                    <p>Efficient processing for loan adjustments.</p>
-                </div>
-            </div>
-            <div class="container section-padding">
-                <div class="service-details">
-                    <p class="lead-text">We support lenders and borrowers through the loan modification process by providing necessary title updates and ensuring the modification's priority position.</p>
-                    <ul class="feature-list">
-                        <li>Modification Guarantees and Endorsements</li>
-                        <li>Bring-down searches</li>
-                        <li>Recording services for modification agreements</li>
-                        <li>Fast turnaround times for high-volume requests</li>
-                    </ul>
+                <!-- Service 4 -->
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                    <div class="mb-4 h-11 w-11 rounded-2xl bg-[#F5F7FA]"></div>
+                    <h3 class="font-serif text-2xl text-[#253A5A]">Real Estate Professionals</h3>
+                    <p class="mt-3 leading-7 text-slate-600">Reliable service for agents, attorneys, lenders, and repeat transaction partners.</p>
                 </div>
             </div>
         </section>
-        <section id="construction-draws" class="tab-content">
-            <div class="page-header">
-                <div class="container">
-                    <h1>Construction Draws</h1>
-                    <p>Risk mitigation for construction lending.</p>
-                </div>
-            </div>
-            <div class="container section-padding">
-                <div class="service-details">
-                    <p class="lead-text">We provide specialized services for construction loans, ensuring that funds are disbursed safely and your lien position remains secure throughout the project.</p>
-                    <ul class="feature-list">
-                        <li>Date-down endorsements before each draw</li>
-                        <li>Mechanic's lien waiver tracking and collection</li>
-                        <li>Review of sworn statements and architectural certificates</li>
-                        <li>On-site inspections coordination</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="order-title" class="tab-content">
-            <div class="page-header">
-                <div class="container">
-                    <h1>Order Title</h1>
-                    <p>Securely submit your title order request online.</p>
-                </div>
-            </div>
-            <div class="container section-padding">
-                <div class="form-container">
-                    <form id="order-form" class="styled-form">
-                        <div class="form-group">
-                            <label for="attorney-name">Attorney/Requestor Name</label>
-                            <input type="text" id="attorney-name" required placeholder="John Doe, Esq.">
+
+        <!-- Why Danube Section -->
+        <section id="why-us" class="bg-white py-20">
+            <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+                <div>
+                    <div class="text-sm font-semibold uppercase tracking-[0.25em] text-[#3E5F8A]">Why Danube Title</div>
+                    <h2 class="mt-4 max-w-2xl font-serif text-4xl text-[#253A5A]">A premium, trusted brand experience for every transaction.</h2>
+                    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
+                            <h3 class="text-lg font-semibold text-[#253A5A]">Responsive Service</h3>
+                            <p class="mt-2 leading-7 text-slate-600">Fast communication and a polished, client-centered process.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="property-address">Property Address</label>
-                            <input type="text" id="property-address" required placeholder="123 Main St, City, State ZIP">
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
+                            <h3 class="text-lg font-semibold text-[#253A5A]">Professional Presentation</h3>
+                            <p class="mt-2 leading-7 text-slate-600">A refined, trustworthy brand that inspires confidence with every interaction.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="tax-parcel">Tax Parcel Number</label>
-                            <input type="text" id="tax-parcel" required placeholder="00-000-000-00">
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
+                            <h3 class="text-lg font-semibold text-[#253A5A]">Residential & Commercial</h3>
+                            <p class="mt-2 leading-7 text-slate-600">Built to support both traditional closings and larger-scale real estate deals.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="transaction-type">Transaction Type</label>
-                            <select id="transaction-type" required>
-                                <option value="" disabled selected>Select Type</option>
-                                <option value="commercial">Commercial Purchase</option>
-                                <option value="residential">Residential Purchase</option>
-                                <option value="refinance">Refinance / Loan Mod</option>
-                            </select>
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
+                            <h3 class="text-lg font-semibold text-[#253A5A]">Relationship Focused</h3>
+                            <p class="mt-2 leading-7 text-slate-600">Designed to serve clients and partners with consistency, care, and attention to detail.</p>
                         </div>
-                        <button type="submit" class="btn-primary">Submit Order</button>
-                    </form>
-                    <div id="order-success" class="success-message hidden">
-                        <h3>Order Received</h3>
-                        <p>Your title order has been successfully submitted. We will contact you shortly.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <section id="sign-in" class="tab-content">
-            <div class="page-header">
-                <div class="container">
-                    <h1>Client Portal</h1>
-                    <p>Track your title commitment orders and communicate securely.</p>
-                </div>
-            </div>
-            <div class="container section-padding">
-                <div class="auth-container" id="auth-panel">
-                    <form id="login-form" class="styled-form login-form">
-                        <h2 class="text-center">Sign In</h2>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required placeholder="user@firm.com">
+
+                <div class="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#ffffff,#f7f9fc)] p-8 shadow-xl shadow-slate-100">
+                    <div class="font-serif text-3xl text-[#253A5A]">Who we serve</div>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
+                            <div class="h-2.5 w-2.5 rounded-full bg-[#3E5F8A]"></div>
+                            <div class="text-slate-700">Home buyers and sellers</div>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" required placeholder="••••••••">
+                        <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
+                            <div class="h-2.5 w-2.5 rounded-full bg-[#3E5F8A]"></div>
+                            <div class="text-slate-700">Real estate agents and brokers</div>
                         </div>
-                        <button type="submit" class="btn-primary full-width">Sign In</button>
-                    </form>
-                </div>
-                
-                <div id="tracking-dashboard" class="dashboard-container hidden">
-                    <div class="dashboard-header">
-                        <h2>Order Tracking Dashboard</h2>
-                        <button id="logout-btn" class="btn-secondary">Log Out</button>
+                        <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
+                            <div class="h-2.5 w-2.5 rounded-full bg-[#3E5F8A]"></div>
+                            <div class="text-slate-700">Lenders and mortgage professionals</div>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
+                            <div class="h-2.5 w-2.5 rounded-full bg-[#3E5F8A]"></div>
+                            <div class="text-slate-700">Investors and commercial clients</div>
+                        </div>
+                        <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
+                            <div class="h-2.5 w-2.5 rounded-full bg-[#3E5F8A]"></div>
+                            <div class="text-slate-700">Builders and developers</div>
+                        </div>
                     </div>
-                    <div class="order-list">
-                        <div class="order-card">
-                            <div class="order-meta">Order #DN-2026-892</div>
-                            <h3>1450 Commercial Pkwy, Suite 200</h3>
-                            <div class="status-badge status-progress">In Progress - Title Search</div>
-                        </div>
-                        <div class="order-card">
-                            <div class="order-meta">Order #DN-2026-881</div>
-                            <h3>980 Meadow Lane, Westfield</h3>
-                            <div class="status-badge status-ready">Commitment Ready</div>
-                        </div>
-                        <div class="order-card">
-                            <div class="order-meta">Order #DN-2026-750</div>
-                            <h3>Project Alpha Construction Draw #4</h3>
-                            <div class="status-badge status-complete">Completed</div>
-                        </div>
+                    <div class="mt-8 rounded-2xl bg-[#253A5A] p-6 text-white">
+                        <div class="font-serif text-2xl">Trusted Title Insurance for Residential & Commercial Transactions</div>
+                        <p class="mt-3 text-slate-200">
+                            Danube Title is positioned to deliver a modern, premium experience with the professionalism clients expect from a title partner.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Process Section -->
+        <section id="process" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="text-sm font-semibold uppercase tracking-[0.25em] text-[#3E5F8A]">Process</div>
+                <h2 class="mt-4 font-serif text-4xl text-[#253A5A]">Simple, polished, and client-friendly.</h2>
+            </div>
+            <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+                    <div class="text-sm font-semibold uppercase tracking-[0.2em] text-[#3E5F8A]">1. Start Your Order</div>
+                    <p class="mt-4 leading-7 text-slate-600">Submit your request and transaction details through our contact form.</p>
+                </div>
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+                    <div class="text-sm font-semibold uppercase tracking-[0.2em] text-[#3E5F8A]">2. Title Review</div>
+                    <p class="mt-4 leading-7 text-slate-600">We begin the title and settlement workflow with clear communication.</p>
+                </div>
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+                    <div class="text-sm font-semibold uppercase tracking-[0.2em] text-[#3E5F8A]">3. Closing Coordination</div>
+                    <p class="mt-4 leading-7 text-slate-600">We help keep the transaction organized and moving toward closing.</p>
+                </div>
+                <div class="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm">
+                    <div class="text-sm font-semibold uppercase tracking-[0.2em] text-[#3E5F8A]">4. Final Execution</div>
+                    <p class="mt-4 leading-7 text-slate-600">A smooth finish with a professional client experience at every step.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-[#253A5A] py-20 text-white">
+            <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+                <div>
+                    <div class="text-sm font-semibold uppercase tracking-[0.25em] text-[#AFC4D6]">Contact</div>
+                    <h2 class="mt-4 max-w-xl font-serif text-4xl leading-tight">Ready to start your next closing?</h2>
+                    <p class="mt-5 max-w-xl text-lg leading-8 text-slate-200">
+                        Reach out to Danube Title for responsive service, a premium client experience, and trusted title support for residential and commercial transactions.
+                    </p>
+                    <div class="mt-8 space-y-3 text-slate-200">
+                        <div>orders@danubetitle.com</div>
+                        <div>(704) 555-0123</div>
+                        <div>Charlotte, North Carolina</div>
+                    </div>
+                </div>
+
+                <div class="rounded-[2rem] bg-white p-8 text-slate-800 shadow-2xl shadow-slate-900/20">
+                    <div class="font-serif text-3xl text-[#253A5A]">Order Title</div>
+                    <p class="mt-3 text-slate-600">Use this form as your primary lead capture and order request section.</p>
+                    <form class="mt-8 grid gap-5">
+                        <div class="grid gap-5 sm:grid-cols-2">
+                            <input class="rounded-2xl border border-slate-300 px-4 py-3 outline-none ring-0 transition focus:border-[#253A5A]" placeholder="Full Name">
+                            <input class="rounded-2xl border border-slate-300 px-4 py-3 outline-none ring-0 transition focus:border-[#253A5A]" placeholder="Email Address">
+                        </div>
+                        <div class="grid gap-5 sm:grid-cols-2">
+                            <input class="rounded-2xl border border-slate-300 px-4 py-3 outline-none ring-0 transition focus:border-[#253A5A]" placeholder="Phone Number">
+                            <input class="rounded-2xl border border-slate-300 px-4 py-3 outline-none ring-0 transition focus:border-[#253A5A]" placeholder="Property Address">
+                        </div>
+                        <select class="rounded-2xl border border-slate-300 px-4 py-3 text-slate-500 outline-none transition focus:border-[#253A5A]">
+                            <option>Transaction Type</option>
+                            <option>Residential Purchase</option>
+                            <option>Residential Refinance</option>
+                            <option>Commercial Transaction</option>
+                            <option>Other</option>
+                        </select>
+                        <textarea class="min-h-[140px] rounded-2xl border border-slate-300 px-4 py-3 outline-none transition focus:border-[#253A5A]" placeholder="Tell us about your transaction"></textarea>
+                        <button type="button" class="w-fit rounded-full bg-[#253A5A] px-6 py-3 text-sm font-medium text-white transition hover:opacity-90">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3 class="font-cinzel">Danube Title Agency</h3>
-                <p>Ensuring your property rights are protected.</p>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+            <div class="flex items-center gap-4">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8">
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="#253A5A" stroke-width="10" />
+                    <path d="M30 35 L50 25 L70 35 V55 C70 73 50 85 50 85 C50 85 30 73 30 55 Z" fill="#5A7D9A" />
+                    <path d="M50 25 L30 35 V55 C30 73 50 85 50 85 V25 Z" fill="#253A5A" />
+                </svg>
+                <div>
+                    <div class="font-serif text-xl text-[#253A5A]">Danube Title</div>
+                    <div class="mt-1 text-xs text-slate-500">Protecting Ownership. Securing Every Transaction.</div>
+                </div>
             </div>
-            <div class="footer-links">
-                Contact: contact@danubetitle.com | Phone: (555) 123-4567
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Danube Title Agency. All rights reserved.</p>
+            <div class="text-sm text-slate-500">© 2026 Danube Title. All rights reserved.</div>
         </div>
     </footer>
-
-    <script src="app.js"></script>
 </body>
 </html>
